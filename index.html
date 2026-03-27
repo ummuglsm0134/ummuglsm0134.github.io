@@ -3,264 +3,443 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lia Arslan | Portfolio</title>
+  <title>Lia Arslan | Projects</title>
   <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #18212f;
+      --muted: #5c6675;
+      --accent: #2563eb;
+      --border: #dbe3f0;
+      --shadow: 0 10px 30px rgba(19, 37, 63, 0.08);
+      --radius: 18px;
+      --max-width: 1060px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #eef4ff 0%, #f7f9fc 180px, #f5f7fb 100%);
+      color: var(--text);
       line-height: 1.6;
-      background: #f7f9fc;
-      color: #1f2937;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
-    }
-
-    header {
-      background: linear-gradient(135deg, #1d4ed8, #2563eb, #60a5fa);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 12px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 24px;
-    }
-
-    .btn-group {
-      margin-top: 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #1d4ed8;
-    }
-
-    .btn-primary:hover {
-      background: #e5e7eb;
-    }
-
-    .btn-secondary {
-      border: 2px solid white;
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.15);
+      text-decoration: none;
     }
 
     .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    section {
-      margin-bottom: 60px;
+    .hero {
+      padding: 56px 0 28px;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #111827;
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 40px 34px;
     }
 
-    .about p {
-      max-width: 850px;
+    .topline {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
       font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      background: white;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: #f8fbff;
+    }
+
+    .section {
+      padding: 26px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-header h2 {
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 600px;
+      font-size: 0.98rem;
+    }
+
+    .about-card,
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 1rem;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
     }
 
-    .card {
-      background: white;
-      border-radius: 14px;
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       padding: 24px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 255px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    .project-card:hover {
+      transform: translateY(-4px);
     }
 
-    .card h3 {
-      margin-bottom: 12px;
-      color: #1d4ed8;
-    }
-
-    .card p {
-      margin-bottom: 14px;
-      color: #4b5563;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #dbeafe;
-      color: #1d4ed8;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      margin: 4px 6px 0 0;
-    }
-
-    .contact-box {
-      background: white;
-      padding: 28px;
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .contact-box p {
+    .project-type {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
-    footer {
-      text-align: center;
-      padding: 24px;
-      background: #111827;
-      color: white;
-      margin-top: 40px;
+    .project-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+      line-height: 1.3;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: #2455bf;
+      border: 1px solid #d8e6ff;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.02rem;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .contact-list strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 36px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero-card {
+        padding: 28px 20px;
+        border-radius: 22px;
       }
 
-      header p {
-        font-size: 1rem;
+      .section-header {
+        flex-direction: column;
+        align-items: start;
       }
     }
   </style>
 </head>
 <body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <span class="topline">Portfolio</span>
+        <h1>Lia Arslan</h1>
+        <p>
+          Business Intelligence and Data Science professional focused on customer analytics,
+          predictive modeling, SQL, Python, and executive-ready reporting. I build practical
+          data solutions that connect technical analysis with real business decisions.
+        </p>
 
-  <header>
-    <h1>Lia Arslan</h1>
-    <p>
-      Business Intelligence and Data Science professional with experience in predictive analytics,
-      machine learning, SQL, Python, and Power BI. I build data products that turn business problems
-      into clear, actionable insights.
-    </p>
-    <div class="btn-group">
-      <a class="btn btn-primary" href="https://github.com/ummuglsm0134" target="_blank">View GitHub</a>
-      <a class="btn btn-secondary" href="https://www.linkedin.com/in/uarslan" target="_blank">LinkedIn</a>
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://github.com/ummuglsm0134" target="_blank">View GitHub</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/uarslan" target="_blank">LinkedIn</a>
+          <a class="btn btn-secondary" href="#projects">See Projects</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="container">
-
-    <section class="about">
-      <h2>About Me</h2>
-      <p>
-        I have a background in Business Intelligence, analytics, and machine learning, with hands-on
-        experience building dashboards, churn models, and decision-support tools. My work focuses on
-        combining technical analysis with business understanding so stakeholders can make better decisions.
-      </p>
+    <section class="section">
+      <div class="section-header">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-card">
+        <p>
+          I work at the intersection of analytics, machine learning, and business intelligence.
+          My background includes churn prediction, KPI dashboard development, customer analytics,
+          and operational reporting. I enjoy turning messy business questions into structured,
+          measurable, and actionable insights.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="projects-grid">
+    <section class="section" id="projects">
+      <div class="section-header">
+        <h2>Selected Projects</h2>
+        <p>
+          A few projects that reflect my work in machine learning, analytics, and business-focused reporting.
+        </p>
+      </div>
 
-        <div class="card">
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-type">Machine Learning</div>
           <h3>Customer Churn Prediction</h3>
           <p>
-            Built a machine learning model to identify customers at risk of churn and translated results
-            into business recommendations for retention improvement.
+            Built a churn prediction workflow using customer, billing, and engagement signals to identify
+            retention risk and translate model findings into pricing and service recommendations.
           </p>
-          <span class="tag">Python</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Power BI</span>
-        </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Power BI</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/ummuglsm0134" target="_blank">GitHub ↗</a>
+          </div>
+        </article>
 
-        <div class="card">
-          <h3>NLP Sentiment Analysis</h3>
+        <article class="project-card">
+          <div class="project-type">NLP</div>
+          <h3>Sentiment Analysis Project</h3>
           <p>
-            Developed an NLP workflow to analyze customer sentiment from text data and uncover patterns
-            that could support product and service improvements.
+            Developed a text analytics project to classify sentiment and uncover themes in customer feedback,
+            with a focus on practical interpretation and business relevance.
           </p>
-          <span class="tag">Python</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Text Analytics</span>
-        </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Text Analytics</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/ummuglsm0134" target="_blank">GitHub ↗</a>
+          </div>
+        </article>
 
-        <div class="card">
-          <h3>Analytics Dashboards</h3>
+        <article class="project-card">
+          <div class="project-type">Dashboarding</div>
+          <h3>Business Intelligence Dashboards</h3>
           <p>
-            Designed interactive dashboards for business users to monitor KPIs, trends, and operational
-            performance using clean, decision-focused reporting.
+            Designed decision-focused dashboards for business teams to monitor KPIs, operational trends,
+            and customer performance through interactive reporting.
           </p>
-          <span class="tag">Power BI</span>
-          <span class="tag">Data Visualization</span>
-          <span class="tag">Reporting</span>
-        </div>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Reporting</span>
+            <span class="tag">Data Visualization</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/ummuglsm0134" target="_blank">GitHub ↗</a>
+          </div>
+        </article>
 
+        <article class="project-card">
+          <div class="project-type">Portfolio Build</div>
+          <h3>AI Mathematical Olympiad Project</h3>
+          <p>
+            Ongoing repository focused on structured experimentation, notebook-based development, and
+            clearly documented work that demonstrates problem solving and technical initiative.
+          </p>
+          <div class="tags">
+            <span class="tag">Jupyter</span>
+            <span class="tag">Experimentation</span>
+            <span class="tag">GitHub</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/ummuglsm0134/AI-Mathematical-Olympiad---Progress-Prize-3" target="_blank">Project Repo ↗</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <div class="projects-grid">
-        <div class="card">
-          <h3>Data Science</h3>
-          <p>Machine Learning, Predictive Modeling, A/B Testing, Statistical Analysis, Feature Engineering</p>
+    <section class="section">
+      <div class="section-header">
+        <h2>Core Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Analytics & Modeling</h3>
+          <p>Predictive Modeling, Statistical Analysis, A/B Testing, Feature Engineering, Business Insights</p>
         </div>
-        <div class="card">
-          <h3>Tools</h3>
-          <p>Python, SQL, Power BI, Snowflake, Excel, pandas, scikit-learn, matplotlib</p>
+        <div class="skill-card">
+          <h3>Tools & Technologies</h3>
+          <p>Python, SQL, Power BI, Snowflake, pandas, scikit-learn, matplotlib, Excel</p>
         </div>
-        <div class="card">
-          <h3>Business Focus</h3>
-          <p>Customer Analytics, Retention, Operational Insights, KPI Reporting, Decision Support</p>
+        <div class="skill-card">
+          <h3>Business Areas</h3>
+          <p>Customer Analytics, Retention, Revenue Insights, Operational Reporting, KPI Development</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <div class="contact-box">
-        <p><strong>Email:</strong> lia.arslan210@gmail.com</p>
-        <p><strong>GitHub:</strong> github.com/ummuglsm0134</p>
-        <p><strong>LinkedIn:</strong> linkedin.com/in/uarslan</p>
+    <section class="section">
+      <div class="section-header">
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-card">
+        <div class="contact-list">
+          <div><strong>Name:</strong> Lia Arslan</div>
+          <div><strong>GitHub:</strong> github.com/ummuglsm0134</div>
+          <div><strong>LinkedIn:</strong> linkedin.com/in/uarslan</div>
+          <div><strong>Email:</strong> lia.arslan210@gmail.com</div>
+        </div>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <p>© 2026 Lia Arslan. All rights reserved.</p>
+    <div class="container">
+      © 2026 Lia Arslan. Built with GitHub Pages.
+    </div>
   </footer>
-
 </body>
 </html>
