@@ -1,12 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lia Arslan | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #1f2937;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb, #60a5fa);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    .btn-group {
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #1d4ed8;
+    }
+
+    .btn-primary:hover {
+      background: #e5e7eb;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .about p {
+      max-width: 850px;
+      font-size: 1.05rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #1d4ed8;
+    }
+
+    .card p {
+      margin-bottom: 14px;
+      color: #4b5563;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 4px 6px 0 0;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .contact-box p {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: #111827;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, this is my website</h1>
-  <p>I am rebuilding my GitHub Pages site.</p>
+
+  <header>
+    <h1>Lia Arslan</h1>
+    <p>
+      Business Intelligence and Data Science professional with experience in predictive analytics,
+      machine learning, SQL, Python, and Power BI. I build data products that turn business problems
+      into clear, actionable insights.
+    </p>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="https://github.com/ummuglsm0134" target="_blank">View GitHub</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/uarslan" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I have a background in Business Intelligence, analytics, and machine learning, with hands-on
+        experience building dashboards, churn models, and decision-support tools. My work focuses on
+        combining technical analysis with business understanding so stakeholders can make better decisions.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <div class="card">
+          <h3>Customer Churn Prediction</h3>
+          <p>
+            Built a machine learning model to identify customers at risk of churn and translated results
+            into business recommendations for retention improvement.
+          </p>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Power BI</span>
+        </div>
+
+        <div class="card">
+          <h3>NLP Sentiment Analysis</h3>
+          <p>
+            Developed an NLP workflow to analyze customer sentiment from text data and uncover patterns
+            that could support product and service improvements.
+          </p>
+          <span class="tag">Python</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Text Analytics</span>
+        </div>
+
+        <div class="card">
+          <h3>Analytics Dashboards</h3>
+          <p>
+            Designed interactive dashboards for business users to monitor KPIs, trends, and operational
+            performance using clean, decision-focused reporting.
+          </p>
+          <span class="tag">Power BI</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Reporting</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <h3>Data Science</h3>
+          <p>Machine Learning, Predictive Modeling, A/B Testing, Statistical Analysis, Feature Engineering</p>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <p>Python, SQL, Power BI, Snowflake, Excel, pandas, scikit-learn, matplotlib</p>
+        </div>
+        <div class="card">
+          <h3>Business Focus</h3>
+          <p>Customer Analytics, Retention, Operational Insights, KPI Reporting, Decision Support</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p><strong>Email:</strong> your-email@example.com</p>
+        <p><strong>GitHub:</strong> github.com/ummuglsm0134</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/uarslan</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Lia Arslan. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
