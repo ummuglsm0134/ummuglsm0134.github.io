@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lia Arslan | Projects</title>
+  <title>Lia Arslan | Data Scientist</title>
   <style>
     :root {
       --bg: #f5f7fb;
@@ -17,15 +17,8 @@
       --max-width: 1060px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -34,19 +27,14 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(var(--max-width), calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .hero {
-      padding: 56px 0 28px;
-    }
+    .hero { padding: 56px 0 28px; }
 
     .hero-card {
       background: var(--card);
@@ -80,6 +68,20 @@
       margin-bottom: 24px;
     }
 
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 20px 0 24px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat { text-align: left; }
+    .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 3px; }
+
     .button-row {
       display: flex;
       flex-wrap: wrap;
@@ -98,29 +100,12 @@
       border: 1px solid transparent;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { transform: translateY(-1px); opacity: 0.95; }
+    .btn-secondary { background: white; border-color: var(--border); color: var(--text); }
+    .btn-secondary:hover { background: #f8fbff; }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      opacity: 0.95;
-    }
-
-    .btn-secondary {
-      background: white;
-      border-color: var(--border);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: #f8fbff;
-    }
-
-    .section {
-      padding: 26px 0;
-    }
+    .section { padding: 26px 0; }
 
     .section-header {
       display: flex;
@@ -130,19 +115,10 @@
       margin-bottom: 20px;
     }
 
-    .section-header h2 {
-      font-size: 1.7rem;
-      letter-spacing: -0.02em;
-    }
+    .section-header h2 { font-size: 1.7rem; letter-spacing: -0.02em; }
+    .section-header p { color: var(--muted); max-width: 600px; font-size: 0.98rem; }
 
-    .section-header p {
-      color: var(--muted);
-      max-width: 600px;
-      font-size: 0.98rem;
-    }
-
-    .about-card,
-    .contact-card {
+    .about-card, .contact-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -150,10 +126,7 @@
       padding: 26px;
     }
 
-    .about-card p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
+    .about-card p { color: var(--muted); font-size: 1rem; line-height: 1.75; }
 
     .projects-grid {
       display: grid;
@@ -173,9 +146,7 @@
       min-height: 255px;
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-    }
+    .project-card:hover { transform: translateY(-4px); }
 
     .project-type {
       font-size: 0.82rem;
@@ -186,10 +157,18 @@
       margin-bottom: 10px;
     }
 
-    .project-card h3 {
-      font-size: 1.18rem;
-      margin-bottom: 10px;
-      line-height: 1.3;
+    .project-card h3 { font-size: 1.18rem; margin-bottom: 10px; line-height: 1.3; }
+
+    .project-metric {
+      display: inline-block;
+      background: #eef4ff;
+      color: var(--accent);
+      border: 1px solid #d8e6ff;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .project-card p {
@@ -215,21 +194,10 @@
       border: 1px solid #d8e6ff;
     }
 
-    .project-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .project-links { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    .project-link {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
-    }
+    .project-link { font-size: 0.92rem; font-weight: 700; color: var(--accent); }
+    .project-link:hover { text-decoration: underline; }
 
     .skills-grid {
       display: grid;
@@ -245,25 +213,11 @@
       padding: 22px;
     }
 
-    .skill-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.02rem;
-    }
+    .skill-card h3 { margin-bottom: 10px; font-size: 1.02rem; }
+    .skill-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
 
-    .skill-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-    }
-
-    .contact-list strong {
-      color: var(--text);
-    }
+    .contact-list { display: grid; gap: 10px; color: var(--muted); }
+    .contact-list strong { color: var(--text); }
 
     footer {
       padding: 36px 0 42px;
@@ -273,29 +227,43 @@
     }
 
     @media (max-width: 700px) {
-      .hero-card {
-        padding: 28px 20px;
-        border-radius: 22px;
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: start;
-      }
+      .hero-card { padding: 28px 20px; border-radius: 22px; }
+      .section-header { flex-direction: column; align-items: start; }
+      .stats-row { gap: 16px; }
     }
   </style>
 </head>
 <body>
+
   <header class="hero">
     <div class="container">
       <div class="hero-card">
         <span class="topline">Portfolio</span>
         <h1>Lia Arslan</h1>
         <p>
-          Business Intelligence and Data Science professional focused on customer analytics,
-          predictive modeling, SQL, Python, and executive-ready reporting. I build practical
-          data solutions that connect technical analysis with real business decisions.
+          I build production data systems — from recommendation engines serving thousands of customers
+          daily to ML pipelines and BI dashboards that drive real business decisions.
+          6+ years working across telecom, healthcare, clean energy, and real estate analytics.
         </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Years in data science & analytics</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Industries (telecom, health, energy, real estate)</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">46K+</div>
+            <div class="stat-label">Daily recommendations in production</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">M.S.</div>
+            <div class="stat-label">Statistics & Data Science, UTSA 2023</div>
+          </div>
+        </div>
 
         <div class="button-row">
           <a class="btn btn-primary" href="https://github.com/ummuglsm0134" target="_blank">View GitHub</a>
@@ -307,16 +275,17 @@
   </header>
 
   <main class="container">
+
     <section class="section">
-      <div class="section-header">
-        <h2>About Me</h2>
-      </div>
+      <div class="section-header"><h2>About Me</h2></div>
       <div class="about-card">
         <p>
-          I work at the intersection of analytics, machine learning, and business intelligence.
-          My background includes churn prediction, KPI dashboard development, customer analytics,
-          and operational reporting. I enjoy turning messy business questions into structured,
-          measurable, and actionable insights.
+          I've built production ML systems at a regional telecom provider, delivered analytics
+          for a women's health tech startup, and led data work across consulting and analytics firms.
+          My background spans the full stack — SQL pipelines, predictive models, causal inference,
+          collaborative filtering, and executive-ready dashboards. I focus on work that connects
+          directly to business outcomes: reduced churn, better retention offers, and decisions
+          grounded in data rather than intuition.
         </p>
       </div>
     </section>
@@ -324,19 +293,60 @@
     <section class="section" id="projects">
       <div class="section-header">
         <h2>Selected Projects</h2>
-        <p>
-          A few projects that reflect my work in machine learning, analytics, and business-focused reporting.
-        </p>
+        <p>Production systems and applied research across machine learning, NLP, and analytics.</p>
       </div>
 
       <div class="projects-grid">
 
         <article class="project-card">
+          <div class="project-type">Recommendation System</div>
+          <h3>Telecom CVM Recommendation Engine</h3>
+          <div class="project-metric">46,000+ daily recommendations · &lt;3 min runtime</div>
+          <p>
+            Production next-best-offer engine combining collaborative filtering, business rule logic,
+            and Ray parallel processing. Segments 8,300+ customers into value tiers and generates
+            personalized package recommendations delivered via a real-time API.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Collaborative Filtering</span>
+            <span class="tag">Ray</span>
+            <span class="tag">SQL Server</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://ummuglsm0134.github.io/customer-retention-recommendation-engine/telecom_cvm_notebook.html" target="_blank">View Notebook ↗</a>
+            <a class="project-link" href="https://github.com/ummuglsm0134/customer-retention-recommendation-engine" target="_blank">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-type">Causal Inference</div>
+          <h3>Causal Inference for Customer Retention</h3>
+          <div class="project-metric">Beyond prediction → actionable retention strategy</div>
+          <p>
+            Moves beyond churn prediction to understand what actually drives customer behavior.
+            Combines predictive modeling with causal thinking to evaluate which retention
+            actions genuinely reduce churn vs. which merely correlate with it.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Causal Inference</span>
+            <span class="tag">scikit-learn</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/ummuglsm0134/causal-inference-retention-analysis" target="_blank">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
           <div class="project-type">Machine Learning</div>
           <h3>Customer Churn Prediction</h3>
+          <div class="project-metric">Identifies at-risk customers 60 days before churn</div>
           <p>
-            Built a churn prediction workflow using customer, billing, and engagement signals to identify
-            retention risk and translate model findings into pricing and service recommendations.
+            End-to-end churn prediction pipeline using customer behavior, billing history, and
+            engagement signals. Translated model outputs into actionable pricing and service
+            recommendations for business stakeholders.
           </p>
           <div class="tags">
             <span class="tag">Python</span>
@@ -351,15 +361,18 @@
 
         <article class="project-card">
           <div class="project-type">NLP</div>
-          <h3>Sentiment Analysis Project</h3>
+          <h3>San Antonio Civic Sentiment Analysis</h3>
+          <div class="project-metric">1,000 tweets analyzed · public sector insights</div>
           <p>
-            Developed a text analytics project to classify sentiment and uncover themes in customer feedback,
-            with a focus on practical interpretation and business relevance.
+            Analyzed Twitter comments to surface public sentiment around San Antonio's 2022 city
+            improvement plan. Classified themes and sentiment polarity to identify top civic
+            priorities — relevant for public health and government analytics roles.
           </p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">NLP</span>
             <span class="tag">Text Analytics</span>
+            <span class="tag">Jupyter</span>
           </div>
           <div class="project-links">
             <a class="project-link" href="https://github.com/ummuglsm0134/San-Antonio-s-Improvement-2022-Twitter-Sentiment-Analysis-" target="_blank">GitHub ↗</a>
@@ -367,49 +380,18 @@
         </article>
 
         <article class="project-card">
-          <div class="project-type">Causal Inference</div>
-          <h3>Causal Inference for Retention</h3>
-          <p>
-            Built a retention analysis framework combining predictive modeling with causal thinking to understand what drives churn and how to reduce it.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Causal Inference</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link" href="https://github.com/ummuglsm0134/causal-inference-retention-analysis" target="_blank">GitHub ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-type">Recommendation System</div>
-          <h3>Customer Retention Recommendation Engine</h3>
-          <p>
-            Production telecom CVM engine combining collaborative filtering, business rule logic, and Ray parallel processing to generate next-best-offer recommendations for thousands of customers daily.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Ray</span>
-            <span class="tag">SQL</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link" href="https://ummuglsm0134.github.io/customer-retention-recommendation-engine/telecom_cvm_notebook.html" target="_blank">View Notebook ↗</a>
-            <a class="project-link" href="https://github.com/ummuglsm0134/customer-retention-recommendation-engine" target="_blank">GitHub ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card">
           <div class="project-type">Dashboarding</div>
           <h3>Business Intelligence Dashboards</h3>
+          <div class="project-metric">KPI monitoring for executive & ops teams</div>
           <p>
-            Designed decision-focused dashboards for business teams to monitor KPIs, operational trends,
-            and customer performance through interactive reporting.
+            Designed decision-focused dashboards enabling business teams to monitor customer KPIs,
+            operational trends, and retention performance. Built for self-serve access by
+            non-technical stakeholders with drill-down capability.
           </p>
           <div class="tags">
             <span class="tag">Power BI</span>
-            <span class="tag">Reporting</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">SQL</span>
             <span class="tag">Data Visualization</span>
           </div>
           <div class="project-links">
@@ -418,19 +400,22 @@
         </article>
 
         <article class="project-card">
-          <div class="project-type">Portfolio Build</div>
-          <h3>AI Mathematical Olympiad Project</h3>
+          <div class="project-type">Statistical Modeling</div>
+          <h3>R Shiny Interactive Analytics App</h3>
+          <div class="project-metric">Self-serve analytics for non-technical users</div>
           <p>
-            Ongoing repository focused on structured experimentation, notebook-based development, and
-            clearly documented work that demonstrates problem solving and technical initiative.
+            Built an interactive web application in R Shiny for exploratory data analysis and
+            statistical visualization. Delivers self-serve analytics for business users
+            without requiring Python or SQL knowledge.
           </p>
           <div class="tags">
-            <span class="tag">Jupyter</span>
-            <span class="tag">Experimentation</span>
-            <span class="tag">GitHub</span>
+            <span class="tag">R</span>
+            <span class="tag">Shiny</span>
+            <span class="tag">Statistical Analysis</span>
+            <span class="tag">Data Visualization</span>
           </div>
           <div class="project-links">
-            <a class="project-link" href="https://github.com/ummuglsm0134/AI-Mathematical-Olympiad---Progress-Prize-3" target="_blank">Project Repo ↗</a>
+            <a class="project-link" href="https://github.com/ummuglsm0134/R-Shiny-App-Project" target="_blank">GitHub ↗</a>
           </div>
         </article>
 
@@ -438,44 +423,43 @@
     </section>
 
     <section class="section">
-      <div class="section-header">
-        <h2>Core Skills</h2>
-      </div>
+      <div class="section-header"><h2>Core Skills</h2></div>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Analytics & Modeling</h3>
-          <p>Predictive Modeling, Statistical Analysis, A/B Testing, Feature Engineering, Business Insights</p>
+          <h3>Machine Learning & Statistics</h3>
+          <p>Predictive modeling, classification, regression, survival analysis, causal inference,
+          A/B testing, feature engineering, model evaluation and deployment.</p>
         </div>
         <div class="skill-card">
-          <h3>Tools & Technologies</h3>
-          <p>Python, SQL, Power BI, Snowflake, pandas, scikit-learn, matplotlib, Excel</p>
+          <h3>Tools & Stack</h3>
+          <p>Python (pandas, scikit-learn, scipy, Ray), SQL, R, Power BI, Tableau,
+          Snowflake, SQLAlchemy, Jupyter, Git.</p>
         </div>
         <div class="skill-card">
-          <h3>Business Areas</h3>
-          <p>Customer Analytics, Retention, Revenue Insights, Operational Reporting, KPI Development</p>
+          <h3>Domain Expertise</h3>
+          <p>Telecom customer analytics, healthcare & public health data, retail BI,
+          retention modeling, revenue analytics, KPI reporting for executive teams.</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-header">
-        <h2>Contact</h2>
-      </div>
+      <div class="section-header"><h2>Contact</h2></div>
       <div class="contact-card">
         <div class="contact-list">
           <div><strong>Name:</strong> Lia Arslan</div>
-          <div><strong>GitHub:</strong> github.com/ummuglsm0134</div>
-          <div><strong>LinkedIn:</strong> linkedin.com/in/uarslan</div>
-          <div><strong>Email:</strong> lia.arslan210@gmail.com</div>
+          <div><strong>GitHub:</strong> <a href="https://github.com/ummuglsm0134" target="_blank" style="color:var(--accent);">github.com/ummuglsm0134</a></div>
+          <div><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/uarslan" target="_blank" style="color:var(--accent);">linkedin.com/in/uarslan</a></div>
+          <div><strong>Email:</strong> <a href="mailto:lia.arslan210@gmail.com" style="color:var(--accent);">lia.arslan210@gmail.com</a></div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Lia Arslan. Built with GitHub Pages.
-    </div>
+    <div class="container">© 2026 Lia Arslan · Data Scientist</div>
   </footer>
+
 </body>
 </html>
